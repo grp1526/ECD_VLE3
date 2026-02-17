@@ -21,3 +21,7 @@ jobs:
 
     - name: Test Step
       run: echo "Passed"
+
+    - name: Notis
+      run: 
+        curl -X POST -H 'Content-type: application/json' --data '{"text":"Build and tests completed successfully!"}' ${{ secrets.SLACK_WEBHOOK}}
